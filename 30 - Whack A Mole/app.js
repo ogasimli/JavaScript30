@@ -31,14 +31,13 @@ function peep() {
 }
 
 function startGame() {
-    button.textContent = 'Stop!';
     scoreBoard.textContent = 0;
     timeUp = false;
     score = 0;
     peep();
     setTimeout(() => {
         timeUp = true;
-        button.textContent = 'Start!';        
+        button.textContent = 'Start!';
     }, 10000)
 }
 
@@ -49,4 +48,17 @@ function bonk(e) {
     this.classList.remove('up');
 }
 
+function toggleStart(e) {
+    const text = button.textContent;
+    if (text === 'Start!') {
+        startGame();
+        button.textContent = 'Stop!';
+    } else {
+        timeUp = true;
+        button.textContent = 'Start!';
+    }
+}
+
 moles.forEach(mole => mole.addEventListener('click', bonk));
+
+button.addEventListener('click', toggleStart);
