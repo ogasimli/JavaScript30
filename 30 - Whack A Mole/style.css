@@ -67,3 +67,11 @@ h1 {
 .hole.up .mole {
   top:0;
 }
+
+button {
+  margin: auto;
+  display: block;
+  margin-top: 5rem;
+  font-size: 3rem;
+  background: #ffc600;
+}
